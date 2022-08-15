@@ -1,5 +1,11 @@
 
-### 1. Writing simple testable operations with express and jest
+## Writing simple testable operations with express and jest
+
+### 1. Create a new NodeJS Project.
+go into any blank directory </br>
+```
+npm init
+```
 
 ### 2. Installing necessary packages
 
