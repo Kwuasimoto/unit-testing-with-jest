@@ -5,9 +5,9 @@
   "main": "index.js",
   "type": "commonjs",
   "scripts": {
-    "test:local": "jest -t=\"mockedFunction has been called, and waited for using jest runAllTimers utility.\"",
-    "test:global": "jest --testNamePattern=\"setTimeout has been called, and with specific args.\"",
-    "test": "jest --testNamePattern=\"Basic Jest Testing*\""
+    "test:math": "jest -t=\"Testing Math Operations with Jest\"",
+    "test:timers": "jest -t=\"Testing Timers with Jest\"",
+    "test:all": "jest"
   },
   "author": "Thomas Shank",
   "license": "ISC"

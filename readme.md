@@ -34,9 +34,13 @@ Create a directory with a suitable name for running simple tests:
 
 ### - Create test file and require our non-existent code
 
-    type nil > __test__/index.test.js
+    type nil > __test__/basic.test.js
 *note: Will throw an error but will create file from terminal.*
 *or manually create file*
+
+## Testing math operations
+
+    
 
 ## Testing the *global* instance
 ___
@@ -97,7 +101,7 @@ describe('Test Global Scope', () => {
     it('setTimeout has been called, and with specific args.', () => {
         // Spy on the setTimeout function
         jest.spyOn(global, 'setTimeout', null);
-        timerGame();
+        timer();
 
         // Test the function after running it
         expect(setTimeout).toHaveBeenCalledTimes(1);
@@ -115,12 +119,13 @@ ___
 ## Testing the *local* instance
 
 ### - Writing a localized test using a mock
+
 ```javascript
 describe("Test Local Scope", () => {
     it('mockedFunction has been called, and waited for using jest runAllTimers utility.', () => {
         // Mock a dummy function
         const mockedFunction = jest.fn();
-        timerGame(mockedFunction);
+        timer(mockedFunction);
 
         // Check if the mock function was called (Should not be until after 1 second.)
         expect(mockedFunction).not.toBeCalled();
