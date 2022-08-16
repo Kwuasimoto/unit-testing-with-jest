@@ -5,8 +5,8 @@
   "main": "index.js",
   "type": "commonjs",
   "scripts": {
-    "test:local": "jest -t=\"Test Local Scope\"",
-    "test:global": "jest --testNamePattern=\"Simple Jest Testing\"",
+    "test:local": "jest -t=\"mockedFunction has been called, and waited for using jest runAllTimers utility.\"",
+    "test:global": "jest --testNamePattern=\"setTimeout has been called, and with specific args.\"",
     "test": "jest --testNamePattern=\"Basic Jest Testing*\""
   },
   "author": "Thomas Shank",

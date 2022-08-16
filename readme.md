@@ -148,5 +148,11 @@ Adding the rootDir option to your jest.config.js file specifies where jests will
 
 
 ```json
-{"": ""}
+{
+  "scripts": {
+    "test:local": "jest -t=\"Basic Jest Testing\"",
+    "test:global": "jest --testNamePattern=\"Basic Jest Testing\"",
+    "test": "jest --testNamePattern=\"Basic Jest Testing*\""
+  }
+}
 ```
