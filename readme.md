@@ -1,37 +1,94 @@
 
-## Writing simple testable operations with express and jest
+# Writing simple testable operations with express and jest
+___
 
-### 1. Create a new NodeJS Project.
-go into any blank directory </br>
+
+## Testing the *global* instance
+___
+
+
+### - Getting Started: Start a new jest project!
+
+    mkdir unit-testing-operators
+
+### - Create a new NodeJS Project.
+*in new directory...*
+
+    cd unit-testing-operators
+    npm init
+
+### - Installing necessary packages
+*it's good to separate your dev dependencies from native to avoid slowing your build times.*
+
+    npm i express
+    npm i -D jest nodemon
+
+**express**: Set up a simple api </br>
+**jest**: testing framework </br>
+**nodemon**: development tool </br>
+
+### - Create test directory
+
+Create a directory with a suitable name for running simple tests:
+
+    mkdir __tests__
+
+### - Create test file and require our non-existent code
+
+    type nil > __test__/index.test.js
+*note: Will throw an error but will create file from terminal.*
+*or manually create file*
+
+### - Create an index.js and write a timer function
+
+    type nil > index.js
+
+```javascript
+module.exports = function timerGame(callback) {
+    console.log("New timer game starting!")
+    setTimeout(() => {
+        callback && callback()
+    }, 1000)
+}
 ```
-npm init
+
+### - Describe how setTimeout is a function on global scale
+
+In javascript we have access to a ***global*** object at all times. </br>
+This global object does not have to be explicitly called for us to use its functions, ex setTimeout. </br> 
+We can take advantage of Jests utilities to observe what is happening to the properties of an instantiated object, </br>
+in this case... ***global***.
+
+### - Use spyOn on global instance to observe setTimeout
+
+Jest borrowed some of its functionality from Jasmine and gave us a spyOn function. </br>
+The spyOn function allows us to transform instantiated methods on objects into spies. </br>
+Spies, or "Spied Methods" allow us to track when functions are called, and with what arguments. </br>
+
+*We want to see whats happening to global.setTimeout, so lets create a spy!* 
+
+```javascript
+jest.spyOn(global, 'setTimeout');
 ```
+*! You wont have to import jest or global, they're both available on the global level*
 
-### 2. Installing necessary packages
+### - Write tests for setTimeout
 
+```javascript
+describe('Test Global Scope', () => {
+    it('setTimeout has been called, and with specific args.', () => {
+        timerGame();
+        expect(setTimeout).toHaveBeenCalledTimes(1);
+        expect(setTimeout).toHaveBeenCalledWith(expect.any(Function), 1000);
+    })
+})
 ```
-npm i express
-npm i -D jest nodemon
-```
-express - Set up a simple api </br>
-jest - testing framework </br>
-nodemon - development tool </br>
+___
+## Testing the *local* instance
 
-### 3. Create test directory
+### - Create a local mockedFunction
 
-### 4. Create test file and require our non-existent code
-
-### 5. Write a timer game
-
-### 6. Describe how setTimeout is a function on global scale
-
-### 7. use spyOn on global instance to observe setTimeout
-
-### 8. Test setTimeout
-
-### 9. Create a local mockedFunction
-
-### 10. Test mockedFunction
+### - Test mockedFunction
 
 
 ### Running Tests file by file from the cli.
