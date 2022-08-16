@@ -1,7 +1,7 @@
 {
-  "name": "unit-testing-demo-new",
+  "name": "unit-testing-operators",
   "version": "1.0.0",
-  "description": "",
+  "description": "Unit testing simple operators and operations with jest",
   "main": "index.js",
   "type": "commonjs",
   "scripts": {
@@ -9,6 +9,6 @@
     "test:global": "jest --testNamePattern=\"Test Global Scope\"",
     "test": "jest"
   },
-  "author": "",
+  "author": "Thomas Shank",
   "license": "ISC"
 }

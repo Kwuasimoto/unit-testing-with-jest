@@ -2,36 +2,35 @@
 # Writing simple testable operations with express and jest
 ___
 
-
-## Testing the *global* instance
+## Getting Started!
 ___
 
+### - Start a new jest project
 
-### - Getting Started: Start a new jest project!
+    mkdir unit-testing-getting-started
 
-    mkdir unit-testing-operators
-
-### - Create a new NodeJS Project.
+### - Create a new NodeJS Project
 *in new directory...*
 
-    cd unit-testing-operators
+    cd unit-testing-getting-started
     npm init
 
 ### - Installing necessary packages
 *it's good to separate your dev dependencies from native to avoid slowing your build times.*
 
-    npm i express
-    npm i -D jest nodemon
+    npm i -D jest
 
-**express**: Set up a simple api </br>
 **jest**: testing framework </br>
-**nodemon**: development tool </br>
+
+### - Initialize jest config
+
+    jest --init
 
 ### - Create test directory
 
 Create a directory with a suitable name for running simple tests:
 
-    mkdir __tests__
+    mkdir __test__
 
 ### - Create test file and require our non-existent code
 
@@ -39,9 +38,15 @@ Create a directory with a suitable name for running simple tests:
 *note: Will throw an error but will create file from terminal.*
 *or manually create file*
 
+## Testing the *global* instance
+___
+
+
 ### - Create an index.js and write a timer function
 
     type nil > index.js
+*note: Will throw an error but will create file from terminal.*
+*or manually create file*
 
 ```javascript
 module.exports = function timerGame(callback) {
@@ -56,8 +61,8 @@ module.exports = function timerGame(callback) {
 
 In javascript we have access to a ***global*** object at all times. </br>
 This global object does not have to be explicitly called for us to use its functions, ex setTimeout. </br> 
-We can take advantage of Jests utilities to observe what is happening to the properties of an instantiated object, </br>
-in this case... ***global***.
+We can take advantage of Jests utilities to observe what is happening to the properties of an instantiated object. </br>
+In this case... ***global***.
 
 ### - Use spyOn on global instance to observe setTimeout
 
@@ -102,6 +107,7 @@ describe('Test Global Scope', () => {
 ```
 
 ___
+
 ## Testing the *local* instance
 
 ### - Writing a localized test using a mock
@@ -127,3 +133,10 @@ describe("Test Local Scope", () => {
 
 ### Running Tests file by file from the cli.
 
+*If you haven't installed jest globally, you will need to install it locally*
+    
+    npm i -D jest
+
+```json
+{"": ""}
+```
