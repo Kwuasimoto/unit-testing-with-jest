@@ -5,8 +5,8 @@
   "main": "index.js",
   "type": "commonjs",
   "scripts": {
-    "test:local": "jest -u -t=\"Test Local Scope\"",
-    "test:global": "jest -u -t=\"Test Global Scope\"",
+    "test:local": "jest -t=\"Test Local Scope\"",
+    "test:global": "jest --testNamePattern=\"Test Global Scope\"",
     "test": "jest"
   },
   "author": "",
