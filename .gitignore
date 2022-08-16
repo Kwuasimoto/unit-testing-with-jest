@@ -1,5 +1,4 @@
 /node_modules/
 /coverage/
-/__test__/
 package-lock.json
 .idea
