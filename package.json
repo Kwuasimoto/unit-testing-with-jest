@@ -1,5 +1,5 @@
 {
-  "name": "unit-testing-operators",
+  "name": "unit-testing-with-jest",
   "version": "1.0.0",
   "description": "Unit testing simple operators and operations with jest",
   "main": "index.js",
