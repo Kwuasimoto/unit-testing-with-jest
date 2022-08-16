@@ -1,14 +1,16 @@
 const timerGame = require('../index.js')
 
 // Clean up timers before each set of tests.
-beforeEach(() => {
-    jest.useFakeTimers();
-})
+// [Replaced by fakeTimers in jest.config.js]
+// beforeEach(() => {
+//     jest.useFakeTimers();
+// })
 
 // Clean up mocks after each set of tests.
-afterEach(() => {
-    jest.resetAllMocks();
-})
+// [Replaced by resetMocks in jest.config.js]
+// afterEach(() => {
+//     jest.resetAllMocks();
+// })
 
 describe('Test Global Scope', () => {
     it('setTimeout has been called, and with specific args.', () => {

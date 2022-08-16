@@ -106,6 +106,10 @@ describe('Test Global Scope', () => {
 })
 ```
 
+Enter the command below to run your new tests
+
+    jest
+
 ___
 
 ## Testing the *local* instance
@@ -131,11 +135,17 @@ describe("Test Local Scope", () => {
 })
 ```
 
+Enter the command below to run your new tests
+
+    jest
+
 ### Running Tests file by file from the cli.
 
-*If you haven't installed jest globally, you will need to install it locally*
-    
-    npm i -D jest
+If you have a lot of test files, it can be helpful to set up individual commands to run tests for new/existing features. </br>
+In package.json we can use the local jest instance associated with this project to run specific tests using the -t option. </br>
+The -t option, or --testNamePattern uses regex to test the supplied value against all *.test.js in your project. </br>
+Adding the rootDir option to your jest.config.js file specifies where jests will start looking for .test.js files
+
 
 ```json
 {"": ""}
