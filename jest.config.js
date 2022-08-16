@@ -13,11 +13,6 @@ module.exports = {
   // Indicates which provider should be used to instrument code for coverage
   coverageProvider: "v8",
 
-  // The default configuration for fake timers
-  fakeTimers: {
-    "enableGlobally": true
-  },
-
   // Automatically reset mock state before every test
   resetMocks: true,
 

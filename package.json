@@ -6,8 +6,8 @@
   "type": "commonjs",
   "scripts": {
     "test:local": "jest -t=\"Test Local Scope\"",
-    "test:global": "jest --testNamePattern=\"Test Global Scope\"",
-    "test": "jest"
+    "test:global": "jest --testNamePattern=\"Simple Jest Testing\"",
+    "test": "jest --testNamePattern=\"Basic Jest Testing*\""
   },
   "author": "Thomas Shank",
   "license": "ISC"
