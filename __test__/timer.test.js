@@ -8,9 +8,9 @@ const {timer} = require("../index");
  *  with jest, using the global timers can cause unexpected results, and it's recommended
  *  by documentation to use their built-in timers.
  */
-beforeEach(() => {
-    jest.useFakeTimers()
-})
+// beforeEach(() => {
+//     jest.useFakeTimers()
+// })
 
 /**
  * (suiteName: string, callback: () => {})
