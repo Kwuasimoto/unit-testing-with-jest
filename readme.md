@@ -63,6 +63,7 @@ We can use the command below with **-t** to run our tests with the same descript
 ```json
 {
   "scripts": {
+    "scripts": {
     "test:basic": "jest -t=\"Testing Math Operations and Basic Mocks with Jest\"",
     "test:math": "jest -t=\"Test addition result to be as expected\"",
     "test:errors": "jest -t=\"Tests that throw errors\"",
@@ -71,8 +72,9 @@ We can use the command below with **-t** to run our tests with the same descript
     "test:timers": "jest -t=\"Testing Timers with Jest\"",
     "test:async1": "jest -t=\"SetTimeout has been called, and with specific args\"",
     "test:async2": "jest -t=\"MockedFunction has been called, and waited for using jest runAllTimers utility\"",
-    "test:all": "jest"
-  }
+    "test:all": "jest",
+    "test:init": "jest --init"
+  },
 }
 ```
 
