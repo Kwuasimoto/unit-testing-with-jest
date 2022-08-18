@@ -2,37 +2,37 @@ const {timer} = require("../index");
 
 /**
  * beforeEach(callback: () => {})
- * 
+ *
  * callback: a method that gets ran before every test case.
  *  In this case we are resetting the timers so our tests run as expected.
- *  with jest, using the global timers can cause unexpected results and its recommended
- *  by documentation to use their built in timers.
+ *  with jest, using the global timers can cause unexpected results, and it's recommended
+ *  by documentation to use their built-in timers.
  */
-beforeEach(() => {
-    jest.useFakeTimers();
-})
+// beforeEach(() => {
+//     jest.useFakeTimers()
+// })
 
 /**
  * (suiteName: string, callback: () => {})
- * 
+ *
  * suiteName: The base level descriptor for the suite and the tests defined within the callback.
  * callback: A enclosed set of test functions() that validate the test suite using except() conditions.
  */
 describe("Testing Timers with Jest", () => {
     /**
-     * --- Testing asyncronous mocks --- 
+     * --- Testing asynchronous mocks ---
      */
 
     /**
-     * 
+     *
      * (testName: string, callback: () => {})
-     * 
+     *
      * testName: the descriptor used to identify a specific test case.
      * callback: executes code and validates the state using except() functions.
-     * 
+     *
      * Create a spy for the global instance variable
      */
-    test('SetTimeout has been called, and with specific args.', () => {
+    test('SetTimeout has been called, and with specific args', () => {
         // Spy on the setTimeout function
         jest.spyOn(global, 'setTimeout', null);
         timer();
@@ -43,15 +43,15 @@ describe("Testing Timers with Jest", () => {
     })
 
     /**
-     * 
+     *
      * (testName: string, callback: () => {})
-     * 
+     *
      * testName: the descriptor used to identify a specific test case.
      * callback: executes code and validates the state using except() functions.
-     * 
+     *
      * create a mock of a function using jest.fn() for testing logic before implementation.
      */
-    test('MockedFunction has been called, and waited for using jest runAllTimers utility.', () => {
+    test('MockedFunction has been called, and waited for using jest runAllTimers utility', () => {
         // Mock a dummy function
         const mockedFunction = jest.fn();
         timer(mockedFunction);

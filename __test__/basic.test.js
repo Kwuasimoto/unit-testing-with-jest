@@ -1,22 +1,26 @@
-const {mathService} = require('../index.js')
+const {
+    mathService,
+    errorHandler,
+    throwError,
+} = require("../index");
 
 /**
  * (suiteName: string, callback: () => {})
- * 
+ *
  * suiteName: The base level descriptor for the suite and the tests defined within the callback.
  * callback: A enclosed set of test functions() that validate the test suite using except() conditions.
  */
-describe('Testing Math Operations with Jest', () => {
+describe('Testing Math Operations and Basic Mocks with Jest', () => {
     /**
-     * --- Testing variables and classes --- 
+     * --- Testing variables and classes ---
      */
 
     /**
      * (testName: string, callback: () => {})
-     * 
+     *
      * testName: the descriptor used to identify a specific test case.
      * callback: executes code and validates the state using except() functions.
-     * 
+     *
      * Common expect() functions
      */
     test('Test addition result to be as expected', () => {
@@ -38,16 +42,16 @@ describe('Testing Math Operations with Jest', () => {
 
     /**
      * (testName: string, callback: () => {})
-     * 
+     *
      * testName: the descriptor used to identify a specific test case.
      * callback: executes code and validates the state using except() functions.
-     * 
+     *
      * Testing class types and object properties using an intentionally thrown Error.
      */
-    test('Test errors being thrown', () => {
+    test('Tests that throw errors', () => {
         try {
             // Throw an intentional error!
-            throw new Error("Error!")
+            throwError();
         } catch (e) {
             // e.message exists
             expect(e).toHaveProperty("message")
@@ -60,11 +64,11 @@ describe('Testing Math Operations with Jest', () => {
 
     /**
      * (testName: string, callback: () => {})
-     * 
+     *
      * testName: the descriptor used to identify a specific test case.
      * callback: executes code and validates the state using except() functions.
-     * 
-     * Testing mocks of functions and classes 
+     *
+     * Testing mocks of functions and classes
      */
     test('Test simple math operation with a mock', () => {
         // spy on math service
@@ -87,4 +91,36 @@ describe('Testing Math Operations with Jest', () => {
         // Are we sane?
         expect(result).toEqual(10);
     })
+
+    /**
+     * (testName: string, callback: () => {})
+     *
+     * testName: the descriptor used to identify a specific test case.
+     * callback: executes code and validates the state using except() functions.
+     *
+     * Testing mocks of logic implementation before
+     */
+    test('Spy on throwError-like mock with similar implementation', () => {
+        const mockThrowErrorFn = jest.fn(() => {
+            // Erase message for demo.
+            // Logic implementation would go here.
+            throw new Error("Error!")
+        })
+        const handledError = errorHandler(mockThrowErrorFn)
+
+        expect(handledError).toBeInstanceOf(Error)
+        expect(handledError.message).toEqual("Error!")
+        // Check to ensure the mock function has been called.
+        expect(mockThrowErrorFn.mock.calls.length).toBeGreaterThan(0)
+
+        /*
+         Giving a param to the mock function's implementation will cause this case to fail.
+            indexer A [0]{First Function Call}
+            indexer B [0]{First Argument (Error)}
+            ->                             A  B */
+        expect(mockThrowErrorFn.mock.calls[0][0]).toBeUndefined()
+        expect(mockThrowErrorFn.mock.results[0].type).toEqual('throw')
+        expect(mockThrowErrorFn.mock.results[0].value).toBeInstanceOf(Error)
+    })
 })
+
