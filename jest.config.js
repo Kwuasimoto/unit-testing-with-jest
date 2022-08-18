@@ -18,4 +18,7 @@ module.exports = {
 
   // The root directory that Jest should scan for tests and modules within
   rootDir: "__test__",
+
+  // Where coverage's will be outputted
+  coverageReporters: ["text", "json", "html"]
 };

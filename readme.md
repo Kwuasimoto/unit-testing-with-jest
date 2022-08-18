@@ -1,5 +1,5 @@
 
-# Writing simple testable operations with express and jest
+# Writing simple testable operations and jest
 ___
 
 ## Getting Started!

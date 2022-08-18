@@ -7,7 +7,7 @@
   "scripts": {
     "test:math": "jest -t=\"Testing Math Operations with Jest\"",
     "test:timers": "jest -t=\"Testing Timers with Jest\"",
-    "test:all": "jest"
+    "test": "jest"
   },
   "author": "Thomas Shank",
   "license": "ISC"

@@ -1,5 +1,5 @@
 const mathService = {
-    getAdditionResult: function performAddition(a, b, callback) {
+    getAdditionResult: function (a, b, callback) {
         console.log(`Using advanced technology to find the sum of: [ ${a} + ${b} ]`)
         return callback(a, b);
     }
