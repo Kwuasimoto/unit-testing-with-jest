@@ -5,9 +5,15 @@
   "main": "index.js",
   "type": "commonjs",
   "scripts": {
-    "test:math": "jest -t=\"Testing Math Operations with Jest\"",
+    "test:basic": "jest -t=\"Testing Math Operations and Basic Mocks with Jest\"",
+    "test:math": "jest -t=\"Test addition result to be as expected\"",
+    "test:errors": "jest -t=\"Tests that throw errors\"",
+    "test:services": "jest -t=\"Test simple math operation with a mock\"",
+    "test:mocks": "jest -t=\"Spy on throwError-like mock with similar implementation\"",
     "test:timers": "jest -t=\"Testing Timers with Jest\"",
-    "test": "jest"
+    "test:async1": "jest -t=\"SetTimeout has been called, and with specific args\"",
+    "test:async2": "jest -t=\"MockedFunction has been called, and waited for using jest runAllTimers utility\"",
+    "test:all": "jest"
   },
   "author": "Thomas Shank",
   "license": "ISC"
