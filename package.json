@@ -13,7 +13,8 @@
     "test:timers": "jest -t=\"Testing Timers with Jest\"",
     "test:async1": "jest -t=\"SetTimeout has been called, and with specific args\"",
     "test:async2": "jest -t=\"MockedFunction has been called, and waited for using jest runAllTimers utility\"",
-    "test:all": "jest"
+    "test:all": "jest",
+    "test:init": "jest --init"
   },
   "author": "Thomas Shank",
   "license": "ISC"
