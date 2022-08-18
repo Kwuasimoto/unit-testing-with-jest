@@ -13,6 +13,9 @@ module.exports = {
   // Indicates which provider should be used to instrument code for coverage
   coverageProvider: "v8",
 
+  // Enables fake timers so timers work as expect
+  // fakeTimers: {'enableGlobally': true},
+
   // The root directory that Jest should scan for tests and modules within
   rootDir: "__test__",
 
